@@ -1,0 +1,6 @@
+RawData <- read.table("household_power_consumption.txt",header=TRUE,na.strings="?",sep=";")
+Feb12Data<-subset(RawData, {(RawData$Date == "2/2/2007")|(RawData$Date == "1/2/2007")})
+par(mfcol=c(1,1))
+png(file="plot1.png")
+hist(Feb12Data$Global_active_power,col="red", main= "Global Active Power",xlab= "Global Active Power (kilowatts)")
+dev.off()
